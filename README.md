@@ -19,3 +19,9 @@ Become a Junior ML Engineer: train models + build services + deploy basics.
 - [ ] EDA project (pandas)
 - [ ] Classic ML project (sklearn)
 - [ ] Model serving: FastAPI + Docker
+
+## Setup (Windows / Miniconda)
+```powershell
+conda env create -f environment.yml
+conda activate ml
+jupyter lab
