@@ -20,6 +20,9 @@ data/*.csv
 data/*.parquet
 data/*.zip
 
+models/*.pkl
+models/*.joblib
+
 # OS
 .DS_Store
 Thumbs.db
