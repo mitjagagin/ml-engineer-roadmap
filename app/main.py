@@ -3,6 +3,8 @@ import numpy as np
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+CLASS_NAMES = ["setosa", "versicolor", "virginica"]
+
 # Создаём веб-приложение
 app = FastAPI(title="Iris classifier")
 
@@ -38,4 +40,4 @@ def predict(req: IrisRequest):
     # Вероятности по классам
     proba = model.predict_proba(x)[0].tolist()
 
-    return {"class_id": pred, "proba": proba}
+    return {"class_id": pred, "class_name": CLASS_NAMES[pred], "proba": proba}
