@@ -1,27 +1,40 @@
 # ML Engineer Roadmap (from zero)
 
 ## Goal
+
 Become a Junior ML Engineer: train models + build services + deploy basics.
 
 ## Links
-- GitHub: https://github.com/<твой_ник>
-- Kaggle: https://www.kaggle.com/<твой_ник>
+
+- GitHub: <https://github.com/><твой_ник>
+- Kaggle: <https://www.kaggle.com/><твой_ник>
 - Python basics notebook: notebooks/00_python_basics.ipynb
 
 ## Progress
+
 ### Week 0 (вахта)
+
 - [ ] Kaggle notebook: Python basics part 1
 - [ ] Kaggle notebook: Python basics part 2
 - [ ] Draft HH resume
 
 ### Month at home
+
 - [ ] Local env (conda / WSL2)
 - [ ] EDA project (pandas)
 - [ ] Classic ML project (sklearn)
 - [ ] Model serving: FastAPI + Docker
 
 ## Setup (Windows / Miniconda)
+
 ```powershell
 conda env create -f environment.yml
 conda activate ml
 jupyter lab
+
+## Run API (FastAPI)
+
+Train model (creates `models/iris_logreg.pkl`):
+```powershell
+conda activate ml
+python scripts/train.py
