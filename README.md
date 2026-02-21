@@ -6,6 +6,7 @@ Become a Junior / Intern ML Engineer (Python): train models + build API + Docker
 ## Links
 - GitHub profile: https://github.com/mitjagagin
 - Kaggle: https://www.kaggle.com/mitjagagin
+- Kaggle notebook (Python basics portfolio): https://www.kaggle.com/code/mitjagagin/python-basics-portfolio
 
 ## What is inside (portfolio)
 ### 1) Python basics notebook
