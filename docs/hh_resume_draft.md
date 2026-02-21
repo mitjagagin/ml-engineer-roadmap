@@ -1,49 +1,37 @@
-# HH Resume Draft — Junior ML Engineer (Python)
+# HH Resume Draft — Junior / Intern ML Engineer (Python)
+
+## Personal
+City: Нефтекамск  
+Relocation: готов  
+Work format: офис / удалённо / гибрид  
+
+## Links
+GitHub: https://github.com/mitjagagin  
+Portfolio repo: https://github.com/mitjagagin/ml-engineer-roadmap  
+Kaggle: https://www.kaggle.com/mitjagagin  
 
 ## Target role
 Junior / Intern ML Engineer (Python)
 
-## Location
-City: <город>
-Format: <удаленно/офис/гибрид>, relocation: <да/нет>
+## Summary
+Начинающий ML Engineer (Python). Формирую портфолио: воспроизводимое окружение (conda), ноутбуки в Jupyter/VS Code, базовые модели на scikit-learn, развертывание REST API (FastAPI). Следующий шаг — Docker/WSL2.
 
-## Contacts
-GitHub: https://github.com/mitjagagin
-Kaggle: <ссылка на Kaggle профиль>
-
-## Summary (О себе)
-Начинающий ML Engineer (Python). Формирую портфолио: обучение моделей на scikit-learn и упаковка в сервисы (FastAPI), воспроизводимое окружение (conda), Git/GitHub. Готов к стажировке/позиции Junior, быстро учусь и довожу задачи до результата.
+Сильная инженерная база: эксплуатация и диагностика оборудования/ПО, работа по инцидентам (ITIL-подход), документирование, взаимодействие с разработчиками/техподдержкой и смежными подразделениями.
 
 ## Key skills
-- Python, Jupyter
+- Python (base), Jupyter, VS Code
 - Git, GitHub
 - conda environments
-- (в процессе) pandas, NumPy, scikit-learn
-- (в процессе) FastAPI, uvicorn
-- (позже) Docker, SQL, MLflow, Linux/WSL2
+- scikit-learn (base)
+- FastAPI, uvicorn (base)
+- (next) Docker, WSL2/Linux, SQL
 
-## Projects (портфолио)
+## Projects
+### 1) Python basics notebook
+- Link: https://github.com/mitjagagin/ml-engineer-roadmap/tree/main/notebooks/00_python_basics.ipynb
 
-### 1) Python basics notebook (portfolio)
-**Goal:** закрепить базовые конструкции Python для дальнейшей работы в ML/инженерных задачах.  
-**What I did:** списки/генераторы, условия, циклы, словари частот; проверка окружения `ml`.  
-**Tech:** Python, Jupyter, conda, Git/GitHub  
-**Link:** https://github.com/mitjagagin/ml-engineer-roadmap/tree/main/notebooks/00_python_basics.ipynb
-
-### 2) ML Model Serving API (planned)
-**Goal:** обучить модель и развернуть REST API `/predict`.  
-**Plan:** sklearn Iris → сохранение joblib → FastAPI + Swagger docs.  
-**Tech:** Python, scikit-learn, FastAPI, uvicorn, joblib, Git/GitHub  
-**Link:** (будет после реализации)
-
-## Education
-<образование: вуз/колледж/курсы, год>
-
-## Work experience
-<последнее место работы — должность — период>
-- <обязанность 1>
-- <обязанность 2>
-- <обязанность 3>
-
-## Additional
-English: reading technical docs / video courses
+### 2) Iris model serving API (FastAPI)
+- Train: `scripts/train.py` (saves `models/iris_logreg.pkl`)
+- Serve: `app/main.py` (`/health`, `/predict`)
+- API test script: `scripts/test_api.ps1`
+- Link: https://github.com/mitjagagin/ml-engineer-roadmap
