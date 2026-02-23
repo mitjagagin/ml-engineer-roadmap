@@ -16,3 +16,15 @@
 - `scripts/test_api.ps1` — автопроверка API (health + predict)
 **Stack:** Python, scikit-learn, joblib, FastAPI, uvicorn, PowerShell, Git/GitHub  
 **Link:** https://github.com/mitjagagin/ml-engineer-roadmap
+
+## 3) California Housing — tabular ML baseline + error analysis
+**Goal:** построить baseline на табличных данных и понять характер ошибок модели.  
+**What:**
+- Baseline: Ridge + StandardScaler (Pipeline)
+- Improved: HistGradientBoostingRegressor
+- Metrics on test split (random_state=42):  
+  - Ridge: RMSE≈0.746, MAE≈0.533, R2≈0.576  
+  - HGB: RMSE≈0.464, MAE≈0.310, R2≈0.836
+- Error analysis: actual vs predicted, error distribution, bias by target bins (over/underestimation)
+**Stack:** Python, pandas, scikit-learn, matplotlib  
+**Link:** https://github.com/mitjagagin/ml-engineer-roadmap/blob/main/notebooks/01_california_housing_baseline.ipynb
