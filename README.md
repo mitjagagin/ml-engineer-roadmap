@@ -1,50 +1,109 @@
-# ML Engineer Roadmap (from zero)
+# ML Engineer Roadmap (с нуля)
 
-## Goal
-Become a Junior / Intern ML Engineer (Python): train models + build API + Docker basics.
-
-## Links
-- GitHub profile: https://github.com/mitjagagin
-- Kaggle: https://www.kaggle.com/mitjagagin
-- Kaggle notebook (Python basics portfolio): https://www.kaggle.com/code/mitjagagin/python-basics-portfolio
-
-## What is inside (portfolio)
-### 1) Python basics notebook
-- File: `notebooks/00_python_basics.ipynb`
-
-### 2) Model training + Model serving API (FastAPI)
-- Train script: `scripts/train.py` (saves model artifact to `models/iris_logreg.pkl`)
-- API service: `app/main.py`
-  - `GET /health`
-  - `POST /predict` (returns `class_id`, `class_name`, `proba`)
-- API test script (PowerShell): `scripts/test_api.ps1`
+> Цель: выйти на уровень Junior / Intern ML Engineer (Python)
+> Формат: микро-сессии 10–20 минут → видимый результат → коммит
 
 ---
 
-### 🚀 Training script CLI usage
+## 📚 Полная документация
 
-Script `scripts/train.py` supports command-line arguments for flexible runs:
+- **Портфолио проектов** → см. docs/PROJECTS.md
+- **Черновик резюме** → см. docs/hh_resume_draft.md
+- **Лог прогресса** → см. docs/learning_log.md
 
-```powershell
-# Run with defaults (model saved to models/iris_logreg.pkl)
+---
+
+## 🚀 Быстрый старт
+
+### 1) Создание окружения (Windows + Miniconda)
+
+Команда 1: conda env create -f environment.yml
+Команда 2: conda activate ml
+
+### 2) Запуск в VS Code
+
+- Откройте репозиторий в VS Code
+- Выберите интерпретатор: Python (ml)
+- Откройте ноутбук или скрипт → запустите
+
+### 3) Проверка установки
+
+Команда: python --version (ожидается: Python 3.11.x)
+Команда: python -c "import sklearn; print(sklearn.__version__)" (ожидается: 1.8.0)
+
+---
+
+## 📂 Проекты в репозитории
+
+**1) Python basics**
+- Файл: notebooks/00_python_basics.ipynb
+- Описание: Основы Python, метрики precision/recall/f1
+
+**2) Iris API**
+- Файлы: app/main.py + scripts/train.py
+- Описание: FastAPI сервис для предсказаний
+
+**3) California Housing**
+- Файл: notebooks/01_california_housing_baseline.ipynb
+- Описание: Регрессия, анализ ошибок
+
+**4) Titanic**
+- Файл: notebooks/02_titanic_eda.ipynb
+- Описание: Классификация, полный ML-цикл
+
+**Подробнее** → см. docs/PROJECTS.md
+
+---
+
+## 🛠 Использование скрипта обучения
+
+**Запуск с настройками по умолчанию:**
 python scripts/train.py
 
-# Custom parameters: output path, test split, reproducibility seed
-python scripts/train.py --model-path models/my_model.pkl --test-size 0.3 --random-state 123
+**Свои параметры:**
+python scripts/train.py --model-path models/my_model.pkl --test-size 0.3
 
-# Show all available options
+**Показать все опции:**
 python scripts/train.py --help
 
-**Arguments:**
-- `--model-path` (default: `models/iris_logreg.pkl`) — Path to save the trained model (.pkl)
-- `--test-size` (default: `0.2`) — Fraction of data for testing (0.0–1.0)
-- `--random-state` (default: `42`) — Seed for reproducible train/test split
+**Аргументы:**
+- --model-path (по умолчанию: models/iris_logreg.pkl) — путь для сохранения модели
+- --test-size (по умолчанию: 0.2) — доля тестовой выборки
+- --random-state (по умолчанию: 42) — seed для воспроизводимости
 
-## Setup (Windows + Miniconda)
+---
 
-### 1) Create environment
-> Creates conda env `ml` using `environment.yml`.
+## 🧪 Тестирование API
 
-```powershell
-conda env create -f environment.yml
-conda activate ml
+**Быстрая проверка (PowerShell):**
+.\scripts\test_api.ps1
+
+**Автотесты (pytest):**
+pytest tests/test_api.py -v
+
+---
+
+## 🔗 Ссылки
+
+- GitHub: https://github.com/mitjagagin
+- Kaggle: https://www.kaggle.com/mitjagagin
+- Python basics на Kaggle: https://www.kaggle.com/code/mitjagagin/python-basics-portfolio
+
+---
+
+## 📁 Структура репозитория
+
+ml-engineer-roadmap/
+├── README.md (этот файл)
+├── environment.yml (Conda-окружение)
+├── notebooks/ (Jupyter ноутбуки)
+├── scripts/ (скрипты обучения и тесты)
+├── app/ (FastAPI сервис)
+├── tests/ (pytest тесты)
+├── models/ (сохранённые модели)
+└── docs/ (документация: PROJECTS, резюме, лог)
+
+---
+
+> Принцип работы: микро-сессии → видимый результат → коммит → документирование
+> Актуальная версия: https://github.com/mitjagagin/ml-engineer-roadmap
