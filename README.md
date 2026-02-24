@@ -21,6 +21,25 @@ Become a Junior / Intern ML Engineer (Python): train models + build API + Docker
 
 ---
 
+### 🚀 Training script CLI usage
+
+Script `scripts/train.py` supports command-line arguments for flexible runs:
+
+```powershell
+# Run with defaults (model saved to models/iris_logreg.pkl)
+python scripts/train.py
+
+# Custom parameters: output path, test split, reproducibility seed
+python scripts/train.py --model-path models/my_model.pkl --test-size 0.3 --random-state 123
+
+# Show all available options
+python scripts/train.py --help
+
+**Arguments:**
+- `--model-path` (default: `models/iris_logreg.pkl`) — Path to save the trained model (.pkl)
+- `--test-size` (default: `0.2`) — Fraction of data for testing (0.0–1.0)
+- `--random-state` (default: `42`) — Seed for reproducible train/test split
+
 ## Setup (Windows + Miniconda)
 
 ### 1) Create environment
