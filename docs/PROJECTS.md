@@ -11,9 +11,9 @@
 
 Что сделано:
 - Базовые структуры: списки, словари, циклы, функции
-- Функция precision_recall_f1(tp, fp, fn) без библиотек
+- Функция `precision_recall_f1(tp, fp, fn)` без библиотек
 - Документирование через Markdown (Goal / Contents / Summary)
-- Проверка окружения: conda env ml, Python 3.11, VS Code + Jupyter
+- Проверка окружения: `conda env ml`, `Python 3.11`, `VS Code + Jupyter`
 
 Стек: Python, Pandas (базово), Jupyter Notebook, conda, Git/GitHub
 
@@ -32,9 +32,9 @@
 Задача: Полный пайплайн «обучение -> сохранение модели -> REST API».
 
 Что сделано:
-- scripts/train.py: обучает LogisticRegression, сохраняет models/iris_logreg.pkl, поддерживает CLI-аргументы
-- app/main.py (FastAPI): GET /health, POST /predict (возвращает class_id, class_name, proba)
-- Тесты: tests/test_api.py (pytest + TestClient), scripts/test_api.ps1 (PowerShell)
+- `scripts/train.py`: обучает `LogisticRegression`, сохраняет `models/iris_logreg.pkl`, поддерживает CLI-аргументы
+- `app/main.py` (FastAPI): `GET /health`, `POST /predict` (возвращает `class_id`, `class_name`, `proba`)
+- Тесты: `tests/test_api.py` (pytest + TestClient), `scripts/test_api.ps1` (PowerShell)
 
 Стек: Python, scikit-learn, joblib, FastAPI, uvicorn, pytest, PowerShell, Git/GitHub
 
@@ -51,9 +51,9 @@
 Задача: Построить baseline для табличных данных, улучшить модель, проанализировать ошибки.
 
 Что сделано:
-- Загрузка: fetch_california_housing(as_frame=True) -> 20 640 строк, 9 колонок
-- Модели: Ridge (baseline) vs HistGradientBoostingRegressor (улучшенная)
-- Разбиение: train/test split с random_state=42
+- Загрузка: `fetch_california_housing(as_frame=True)` -> 20 640 строк, 9 колонок
+- Модели: `Ridge` (baseline) vs `HistGradientBoostingRegressor` (улучшенная)
+- Разбиение: `train/test split` с `random_state=42`
 - Метрики на тесте:
   - Ridge: RMSE 0.746, MAE 0.533, R2 0.576
   - HGB: RMSE 0.464, MAE 0.310, R2 0.836
@@ -74,15 +74,15 @@
 Задача: Полный цикл ML-проекта для бинарной классификации.
 
 Что сделано:
-- EDA: загрузка через sns.load_dataset, визуализация, анализ пропусков
+- EDA: загрузка через `sns.load_dataset`, визуализация, анализ пропусков
 - Предобработка:
-  - Заполнение пропусков: Age -> медиана, Embarked -> мода
-  - Удаление колонок с более 70 процентов пропусков (Deck)
-  - One-Hot Encoding для sex и embarked через get_dummies
-  - Разбиение на train/test со стратификацией (stratify=y)
-- Модели: LogisticRegression (около 78 процентов accuracy) vs RandomForest (около 82 процентов accuracy)
-- Анализ: confusion matrix, feature importances (sex, fare, pclass — наиболее значимые)
-- Сохранение артефактов через joblib
+  - Заполнение пропусков: `Age` -> медиана, `Embarked` -> мода
+  - Удаление колонок с более 70 процентов пропусков (`Deck`)
+  - One-Hot Encoding для `sex` и `embarked` через `get_dummies`
+  - Разбиение на train/test со стратификацией (`stratify=y`)
+- Модели: `LogisticRegression` (около 78 процентов accuracy) vs `RandomForest` (около 82 процентов accuracy)
+- Анализ: `confusion matrix`, `feature importances` (`sex`, `fare`, `pclass` — наиболее значимые)
+- Сохранение артефактов через `joblib`
 
 Стек: Python, Pandas, NumPy, scikit-learn, Seaborn, Matplotlib, joblib
 
