@@ -1,88 +1,113 @@
 # ML Engineer Roadmap (с нуля)
 
-Цель: выйти на уровень Junior / Intern ML Engineer (Python)
-Формат: микро-сессии 10-20 минут -> видимый результат -> коммит
+> Цель: выйти на уровень Junior / Intern ML Engineer (Python)  
+> Формат: микро-сессии 10-20 минут -> видимый результат -> коммит
 
 ---
-## Документация
 
-- Портфолио проектов: docs/PROJECTS.md
-- Черновик резюме: docs/hh_resume_draft.md
-- Лог прогресса: docs/learning_log.md
+## 📚 Документация
+
+| Файл | Описание |
+|------|----------|
+| [docs/PROJECTS.md](docs/PROJECTS.md) | Портфолио проектов с деталями |
+| [docs/hh_resume_draft.md](docs/hh_resume_draft.md) | Черновик резюме для hh.ru |
+| [docs/learning_log.md](docs/learning_log.md) | Лог прогресса обучения |
+| [docs/cheat_sheet.md](docs/cheat_sheet.md) | Шпаргалка с паттернами и командами |
 
 ---
-## Быстрый старт
+## 🚀 Быстрый старт
 
 ### Создание окружения (Windows + Miniconda)
 
-`$ conda env create -f environment.yml`
-`$ conda activate ml`
+~~~bash
+conda env create -f environment.yml
+conda activate ml
+~~~
 
 ### Запуск в VS Code
 
-- Откройте репозиторий в VS Code
-- Выберите интерпретатор: `Python (ml)`
-- Откройте ноутбук или скрипт -> запустите
+1. Откройте репозиторий в VS Code
+2. Выберите интерпретатор: `Python (ml)`
+3. Откройте ноутбук или скрипт -> запустите
 
 ### Проверка установки
 
-`$ python --version`
-`$ python -c "import sklearn; print(sklearn.__version__)"`
+~~~bash
+python --version
+python -c "import sklearn; print(sklearn.__version__)"
+~~~
 
 ---
-## Проекты в репозитории
+## 📂 Проекты в репозитории
 
-1. Python basics
-   - Файл: `notebooks/00_python_basics.ipynb`
-   - Описание: Основы Python, метрики precision/recall/f1
+| Проект | Файл | Описание |
+|--------|------|----------|
+| Python basics | `notebooks/00_python_basics.ipynb` | Основы Python, метрики precision/recall/f1 |
+| Iris API | `app/main.py`, `scripts/train.py` | FastAPI сервис для предсказаний |
+| California Housing | `notebooks/01_california_housing_baseline.ipynb` | Регрессия, анализ ошибок |
+| Titanic | `notebooks/02_titanic_eda.ipynb` | Классификация, полный ML-цикл |
 
-2. Iris API
-   - Файлы: `app/main.py`, `scripts/train.py`
-   - Описание: FastAPI сервис для предсказаний
-
-3. California Housing
-   - Файл: `notebooks/01_california_housing_baseline.ipynb`
-   - Описание: Регрессия, анализ ошибок
-
-4. Titanic
-   - Файл: `notebooks/02_titanic_eda.ipynb`
-   - Описание: Классификация, полный ML-цикл
-
-Подробнее: docs/PROJECTS.md
+**Подробнее** → см. [docs/PROJECTS.md](docs/PROJECTS.md)
 
 ---
-## Скрипт обучения (CLI)
+## 🛠 Скрипт обучения (CLI)
 
-Запуск по умолчанию:
-`$ python scripts/train.py`
+### Запуск по умолчанию
 
-Свои параметры:
-`$ python scripts/train.py --model-path models/iris_logreg.pkl --test-size 0.3`
+~~~bash
+python scripts/train.py
+~~~
 
-Показать опции:
-`$ python scripts/train.py --help`
+### Свои параметры
 
-Аргументы:
-- `--model-path`: путь для сохранения модели (по умолчанию: `models/iris_logreg.pkl`)
-- `--test-size`: доля тестовой выборки (по умолчанию: `0.2`)
-- `--random-state`: seed для воспроизводимости (по умолчанию: `42`)
+~~~bash
+python scripts/train.py --model-path models/iris_logreg.pkl --test-size 0.3
+~~~
 
----
-## Тестирование API
+### Показать опции
 
-Быстрая проверка (PowerShell):
-`$ .\scripts\test_api.ps1`
+~~~bash
+python scripts/train.py --help
+~~~
 
-Автотесты (pytest):
-`$ pytest tests/test_api.py -v`
+### Аргументы
 
----
-## Ссылки
-
-- GitHub: https://github.com/mitjagagin
-- Kaggle: https://www.kaggle.com/mitjagagin
-- Python basics на Kaggle: https://www.kaggle.com/code/mitjagagin/python-basics-portfolio
+| Аргумент | По умолчанию | Описание |
+|----------|--------------|----------|
+| `--model-path` | `models/iris_logreg.pkl` | Путь для сохранения модели |
+| `--test-size` | `0.2` | Доля тестовой выборки (0.0–1.0) |
+| `--random-state` | `42` | Seed для воспроизводимости |
 
 ---
-Принцип работы: микро-сессии -> видимый результат -> коммит -> документирование
-Актуальная версия: https://github.com/mitjagagin/ml-engineer-roadmap
+## 🧪 Тестирование API
+
+### Быстрая проверка (PowerShell)
+
+~~~bash
+.\scripts\test_api.ps1
+~~~
+
+### Автотесты (pytest)
+
+~~~bash
+pytest tests/test_api.py -v
+~~~
+
+### Ожидаемый результат
+
+~~~
+tests/test_api.py::test_health PASSED
+tests/test_api.py::test_predict PASSED
+~~~
+
+---
+## 🔗 Ссылки
+
+- **GitHub**: https://github.com/mitjagagin
+- **Kaggle**: https://www.kaggle.com/mitjagagin
+- **Python basics на Kaggle**: https://www.kaggle.com/code/mitjagagin/python-basics-portfolio
+
+---
+
+> Принцип работы: микро-сессии -> видимый результат -> коммит -> документирование  
+> Актуальная версия: https://github.com/mitjagagin/ml-engineer-roadmap
