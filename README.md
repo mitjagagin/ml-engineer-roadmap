@@ -15,8 +15,8 @@
 
 ### Создание окружения (Windows + Miniconda)
 
-$ conda env create -f environment.yml
-$ conda activate ml
+`$ conda env create -f environment.yml`
+`$ conda activate ml`
 
 ### Запуск в VS Code
 
@@ -26,11 +26,8 @@ $ conda activate ml
 
 ### Проверка установки
 
-$ python --version
-  # Ожидается: Python 3.11.x
-
-$ python -c "import sklearn; print(sklearn.__version__)"
-  # Ожидается: 1.8.0
+`$ python --version`
+`$ python -c "import sklearn; print(sklearn.__version__)"`
 
 ---
 ## Проекты в репозитории
@@ -57,13 +54,13 @@ $ python -c "import sklearn; print(sklearn.__version__)"
 ## Скрипт обучения (CLI)
 
 Запуск по умолчанию:
-$ python scripts/train.py
+`$ python scripts/train.py`
 
 Свои параметры:
-$ python scripts/train.py --model-path models/my_model.pkl --test-size 0.3
+`$ python scripts/train.py --model-path models/iris_logreg.pkl --test-size 0.3`
 
 Показать опции:
-$ python scripts/train.py --help
+`$ python scripts/train.py --help`
 
 Аргументы:
 - `--model-path`: путь для сохранения модели (по умолчанию: `models/iris_logreg.pkl`)
@@ -74,10 +71,10 @@ $ python scripts/train.py --help
 ## Тестирование API
 
 Быстрая проверка (PowerShell):
-$ .\scripts\test_api.ps1
+`$ .\scripts\test_api.ps1`
 
 Автотесты (pytest):
-$ pytest tests/test_api.py -v
+`$ pytest tests/test_api.py -v`
 
 ---
 ## Ссылки
@@ -86,5 +83,6 @@ $ pytest tests/test_api.py -v
 - Kaggle: https://www.kaggle.com/mitjagagin
 - Python basics на Kaggle: https://www.kaggle.com/code/mitjagagin/python-basics-portfolio
 
----Принцип работы: микро-сессии -> видимый результат -> коммит -> документирование
+---
+Принцип работы: микро-сессии -> видимый результат -> коммит -> документирование
 Актуальная версия: https://github.com/mitjagagin/ml-engineer-roadmap
